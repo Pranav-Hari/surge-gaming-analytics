@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="surgeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C059"/>
+      <stop offset="100%" stop-color="#C9A227"/>
+    </linearGradient>
+    <linearGradient id="surgeVelvet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B3394"/>
+      <stop offset="100%" stop-color="#4B236A"/>
+    </linearGradient>
+  </defs>
+  <!-- Background: Rich Black Rounded Surface -->
+  <rect width="64" height="64" rx="14" fill="#08090D"/>
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#C9A227" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <!-- Subtle Royal Velvet Geometric Accent Shadow -->
+  <path d="M38 10 L21 34 L33 34 L28 54 L48 28 L36 28 Z" fill="url(#surgeVelvet)" opacity="0.85"/>
+
+  <!-- Primary Energy Mark: Royal Antique Gold Stylized Bolt -->
+  <path d="M36 8 L18 32 L31 32 L26 52 L46 26 L33 26 Z" fill="url(#surgeGold)"/>
+
+  <!-- Restrained Imperial Crimson Accent Accent Spark -->
+  <circle cx="31" cy="32" r="2.5" fill="#9B111E" opacity="0.9"/>
+</svg>

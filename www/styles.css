@@ -1,0 +1,568 @@
+/* ==========================================================================
+   SURGE — Gaming Industry Exposed: Regal Analytics Theme (Option C)
+   Palette: Rich Black (#08090D), Royal Antique Gold (#C9A227),
+            Royal Velvet (#4B236A), Imperial Crimson (#9B111E), Royal Blue (#4169E1)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Option C: Regal Dark Surfaces */
+  --bg-primary: #08090D;
+  --bg-secondary: #0e1017;
+  --bg-card: rgba(16, 18, 26, 0.82);
+  --bg-card-hover: rgba(22, 25, 36, 0.92);
+
+  /* Brand Accents (Option C) */
+  --brand-gold: #C9A227;
+  /* Royal Antique Gold - Primary Brand Accent */
+  --brand-gold-glow: rgba(201, 162, 39, 0.25);
+  --brand-velvet: #4B236A;
+  /* Royal Velvet - Secondary Brand Accent */
+  --brand-crimson: #9B111E;
+  /* Imperial Crimson - Restrained Emphasis */
+  --brand-blue: #4169E1;
+  /* Royal Blue - Supporting Interface Accent */
+
+  --border-subtle: rgba(201, 162, 39, 0.14);
+  --border-highlight: rgba(201, 162, 39, 0.40);
+  --border-velvet: rgba(75, 35, 106, 0.35);
+
+  /* Preserved Analytical Palette (DO NOT CHANGE) */
+  --neon-cyan: #00f0ff;
+  --neon-violet: #a855f7;
+  --neon-blue: #38bdf8;
+  --neon-emerald: #10b981;
+  --neon-amber: #f59e0b;
+  --neon-rose: #f43f5e;
+
+  /* Text & Typography */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --text-gold: #e2c059;
+
+  --font-logo: 'Libre Barcode 39 Extended Text', 'Outfit', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Restrained Regal Glows & Shadows */
+  --glow-gold: 0 0 16px rgba(201, 162, 39, 0.2);
+  --glow-velvet: 0 0 16px rgba(75, 35, 106, 0.25);
+}
+
+/* Global resets & typography */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.brand-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* Navigation bar styling */
+.navbar {
+  background: rgba(12, 14, 21, 0.94) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.75rem 1.5rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0.05em;
+  color: #fff !important;
+  padding: 0;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Clickable Brand Navigation Link */
+.brand-nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none !important;
+  color: inherit !important;
+  flex-shrink: 0;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  cursor: pointer;
+}
+
+.brand-nav-link:hover .brand-wordmark {
+  color: #f3d46a;
+  text-shadow: 0 0 16px rgba(201, 162, 39, 0.45);
+}
+
+.brand-nav-link:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
+}
+
+/* SURGE Barcode Wordmark */
+.brand-wordmark {
+  font-family: var(--font-logo);
+  font-size: 3.0rem;
+  color: var(--brand-gold);
+  line-height: 1.05;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.brand-wordmark:hover {
+  color: #f3d46a;
+  text-shadow: 0 0 16px rgba(201, 162, 39, 0.45);
+}
+
+/* Overview Hero Barcode Wordmark */
+.hero-wordmark {
+  font-family: var(--font-logo);
+  font-size: 2.85rem;
+  color: var(--brand-gold);
+  line-height: 1.05;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 0 0 14px rgba(201, 162, 39, 0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.brand-tag {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: rgba(75, 35, 106, 0.28);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  color: var(--brand-gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-gold) !important;
+  background: rgba(201, 162, 39, 0.08);
+}
+
+.nav-link.active {
+  color: #fff !important;
+  background: linear-gradient(135deg, rgba(75, 35, 106, 0.38), rgba(201, 162, 39, 0.12)) !important;
+  border: 1px solid var(--border-highlight);
+  box-shadow: 0 0 12px rgba(201, 162, 39, 0.15);
+}
+
+/* Regal Glassmorphic Cards */
+.surge-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.surge-card:hover {
+  border-color: var(--border-highlight);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), 0 0 15px rgba(201, 162, 39, 0.05);
+}
+
+.card-title-surge {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle-surge {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* Stat & KPI Cards */
+.kpi-card {
+  background: linear-gradient(135deg, rgba(16, 18, 26, 0.92), rgba(12, 14, 21, 0.85));
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-highlight);
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--brand-gold), var(--brand-velvet));
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 0 16px rgba(201, 162, 39, 0.15);
+}
+
+.kpi-subtext {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* Takeaway & Limitation Badges / Callouts (Preserved Analytical Encodings) */
+.takeaway-box {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-left: 4px solid var(--neon-emerald);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.83rem;
+  color: #d1fae5;
+  line-height: 1.45;
+}
+
+.limitation-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-left: 4px solid var(--neon-amber);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #fef3c7;
+  line-height: 1.45;
+}
+
+.info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(65, 105, 225, 0.12);
+  color: var(--brand-blue);
+  border: 1px solid rgba(65, 105, 225, 0.25);
+}
+
+/* Form Controls & Inputs */
+.form-control,
+.form-select {
+  background-color: #0b0d14 !important;
+  border: 1px solid rgba(201, 162, 39, 0.22) !important;
+  color: #f1f5f9 !important;
+  border-radius: 8px !important;
+  font-size: 0.85rem !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 8px rgba(201, 162, 39, 0.25) !important;
+}
+
+.irs--shiny .irs-bar {
+  background: linear-gradient(90deg, var(--brand-gold), var(--brand-velvet)) !important;
+  border: none !important;
+}
+
+.irs--shiny .irs-line {
+  background: rgba(201, 162, 39, 0.15) !important;
+}
+
+.irs--shiny .irs-single,
+.irs--shiny .irs-from,
+.irs--shiny .irs-to {
+  background: var(--bg-secondary) !important;
+  color: var(--brand-gold) !important;
+  border: 1px solid var(--border-highlight) !important;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.irs--shiny .irs-handle {
+  background-color: var(--brand-gold) !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.35);
+}
+
+/* Custom Checkbox & Radio Buttons */
+.form-check-input {
+  background-color: #0b0d14 !important;
+  border: 1px solid rgba(201, 162, 39, 0.3) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--brand-gold) !important;
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 8px rgba(201, 162, 39, 0.35);
+}
+
+/* Sentiment Genre Grid (Compact 2-column layout for control sidebar) */
+.sentiment-genre-grid .shiny-options-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 8px;
+}
+
+.sentiment-genre-grid .form-check {
+  margin-bottom: 3px;
+  font-size: 0.82rem;
+}
+
+/* DT Table Custom Dark Overrides */
+.dataTables_wrapper {
+  color: var(--text-main) !important;
+  font-size: 0.82rem;
+}
+
+table.dataTable {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  border-collapse: collapse !important;
+}
+
+table.dataTable thead th {
+  background-color: rgba(14, 16, 24, 0.95) !important;
+  color: #e2e8f0 !important;
+  /* Readable neutral light */
+  border-bottom: 1px solid rgba(201, 162, 39, 0.22) !important;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: color 0.15s ease;
+}
+
+/* Gold sparingly for interactive sorting states */
+table.dataTable thead th.sorting_asc,
+table.dataTable thead th.sorting_desc {
+  color: var(--brand-gold) !important;
+}
+
+table.dataTable thead th:hover {
+  color: #ffffff !important;
+}
+
+/* Sorting indicators (neutral by default, gold when actively sorted) */
+table.dataTable thead>tr>th.sorting:before,
+table.dataTable thead>tr>th.sorting:after,
+table.dataTable thead>tr>th.sorting_asc:before,
+table.dataTable thead>tr>th.sorting_asc:after,
+table.dataTable thead>tr>th.sorting_desc:before,
+table.dataTable thead>tr>th.sorting_desc:after {
+  opacity: 0.3 !important;
+  color: #94a3b8 !important;
+}
+
+table.dataTable thead>tr>th.sorting_asc:before,
+table.dataTable thead>tr>th.sorting_desc:after {
+  opacity: 1 !important;
+  color: var(--brand-gold) !important;
+}
+
+table.dataTable tbody tr {
+  background-color: rgba(16, 18, 26, 0.45) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+table.dataTable tbody tr.odd {
+  background-color: rgba(14, 16, 24, 0.6) !important;
+}
+
+table.dataTable tbody tr.even {
+  background-color: rgba(19, 22, 31, 0.4) !important;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: rgba(201, 162, 39, 0.08) !important;
+}
+
+.dataTables_info,
+.dataTables_paginate {
+  color: var(--text-dim) !important;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.dataTables_length {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.dataTables_length select {
+  background-color: #0b0d14 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(201, 162, 39, 0.22) !important;
+  border-radius: 6px !important;
+  padding: 4px 26px 4px 10px !important;
+  margin: 0 6px !important;
+  outline: none;
+  min-width: 68px !important;
+  height: 32px !important;
+  font-size: 0.82rem !important;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C9A227' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 8px center !important;
+  background-size: 10px 10px !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+.dataTables_length select:focus {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 8px rgba(201, 162, 39, 0.25) !important;
+}
+
+.dataTables_filter {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.dataTables_filter input {
+  background-color: #0b0d14 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(201, 162, 39, 0.22) !important;
+  border-radius: 6px !important;
+  padding: 3px 8px !important;
+  margin-left: 6px !important;
+  outline: none;
+}
+
+.dataTables_filter input:focus {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.25) !important;
+}
+
+.dataTables_paginate .paginate_button {
+  color: var(--text-muted) !important;
+  border-radius: 6px !important;
+  padding: 3px 8px !important;
+}
+
+.dataTables_paginate .paginate_button.current {
+  background: rgba(201, 162, 39, 0.15) !important;
+  border: 1px solid var(--border-highlight) !important;
+  color: #fff !important;
+}
+
+/* Plotly container adjustments */
+.js-plotly-plot .plotly .modebar {
+  background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn path {
+  fill: var(--text-muted) !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn:hover path {
+  fill: var(--brand-gold) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .brand-wordmark {
+    font-size: 2.2rem;
+  }
+
+  .hero-wordmark {
+    font-size: 2.35rem;
+  }
+
+  .kpi-value {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-wordmark {
+    font-size: 1.95rem;
+  }
+
+  .hero-wordmark {
+    font-size: 2.05rem;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+}

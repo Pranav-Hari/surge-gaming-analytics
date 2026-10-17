@@ -1,0 +1,66 @@
+# ==============================================================================
+# SURGE — Git Ignore Rules
+# ==============================================================================
+
+/run_surge.ps1
+/test_launcher.ps1
+
+# 1. Raw upstream datasets (Exceeds GitHub 100MB limit / ~1.76 GB total)
+/Datasets/Original/
+
+# 2. Removed development scratchpads
+/scratch/
+
+# 3. Private local engineering handbook
+/REFERENCE.md
+
+# 4. Ignore all Markdown files directly in the project root by default
+/*.md
+
+# 5. Allow the public README only
+!/README.md
+
+# 6. R workspace and session artifacts
+.Rhistory
+.RData
+.RDataTmp
+.Rproj.user/
+*.Rproj
+
+# 7. Operating system and file system artifacts
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 8. Temporary editor files and IDE configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# 9. Temporary logs, debug output & session files
+*.log
+*.tmp
+*.bak
+
+# 10. Credentials, secrets and local configuration files
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# ==============================================================================
+# CRITICAL ASSETS TO PRESERVE
+# ==============================================================================
+!/data/surge_cache.rds
+!/www/
+!/R/
+!*.R
